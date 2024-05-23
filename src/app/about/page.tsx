@@ -7,19 +7,13 @@ const Page = () => {
     const [valor, setValor] = useState('Hola mundo')
     /** */
     return <>
-        <div 
-        style={{height: '100vh'}}
-        >
-            <div className={styles.testStyle}>
-                Otro elemento JSX 3
-                <input type="text" value={valor} onChange={(e) => setValor(e.target.value)} />
+        <div className={styles.containerCard}>
+            <div className={styles.containerContent}>
+                <Card icono='icono2' titulo='titulo2' descripcion='descripcion2'></Card>
+                <Card icono='icono2' titulo='titulo2' descripcion='descripcion2'></Card>
+                <Card icono='icono2' titulo='titulo2' descripcion='descripcion2'></Card>
             </div>
-
-            <h1>{valor}</h1>
-            <Card icono='icono2' titulo='titulo2' descripcion='descripcion2'></Card>
         </div>
-
-
     </>
 }
 

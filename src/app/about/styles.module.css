@@ -1,4 +1,20 @@
-.testStyle{
-    background-color: blue;
-    color: white;
+
+.containerCard{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerContent{
+    display: flex;
+    height: 50%;
+    width: 50%;
+    overflow: auto;
+}
+
+.cardstyles{
+    height: 200px;
+    width: 300px;
 }
