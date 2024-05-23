@@ -1,4 +1,4 @@
-'use client'
+//'use client'
 import { useEffect, useState } from "react"
 import axios from "axios"
 
@@ -19,6 +19,7 @@ const Page = async ()=>{
     })
     //Consumir Api
     return (<>
+
     </>)
 }
 
