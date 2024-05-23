@@ -1,31 +1,28 @@
-//'use client'
+'use client'
 import { useEffect, useState } from "react"
-import axios from "axios"
+import useSWR from 'swr'
 
-//const fetcher = (url: string) => fetch(url).then(r => r.json())
-/**
- * FETCH url => response => JSON PAGE
- * AXIOS
- * useSWR
- * 
- * 
- * @returns 
- */
-const Page = async ()=>{
+const fetcher = (url: string) => fetch(url).then(r => r.json())
 
-    axios.get('http://localhost:3000/api/producto')
-    .then(response=>{
-        console.log(response)
-    })
-    //Consumir Api
+const Page = () => {
+    let ProductosArray = [] as Array<producto>
+
+    const { data: ProductosData, error, isLoading } = useSWR('/api/producto', fetcher)
+
+    if (ProductosData) ProductosArray = ProductosData
+
     return (<>
-
+        <div>{
+            ProductosArray.map((item, index)=>{
+                return <p key={index}>{item.Nombre} {item.Costo}</p>
+            })
+        }</div>
     </>)
 }
 
 export default Page
 
-interface producto{
+interface producto {
     Nombre: string,
     Descripcion: string,
     Costo: number
